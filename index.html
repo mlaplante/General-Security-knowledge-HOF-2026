@@ -380,11 +380,14 @@
 
         /* Mobile Responsive Styles */
         @media screen and (max-width: 768px) {
-            /* Adjust heading sizes for mobile */
+            /* Adjust heading sizes for mobile and fix gradient visibility */
             .reveal h1 {
                 font-size: 1.8em;
                 line-height: 1.2;
                 margin-bottom: 0.5em;
+                /* Fix gradient text that disappears on mobile browsers */
+                -webkit-text-fill-color: var(--primary-color);
+                background: none;
             }
 
             .reveal h2 {
@@ -394,6 +397,11 @@
 
             .reveal h3 {
                 font-size: 1.3em;
+            }
+
+            /* Preserve white text for title slide */
+            .title-slide h1 {
+                -webkit-text-fill-color: white;
             }
 
             /* Adjust text sizes for mobile readability */
@@ -498,16 +506,6 @@
             /* Section headers */
             .section-header::before {
                 width: 60px;
-            }
-
-            /* Improve gradient visibility on mobile */
-            .reveal h1 {
-                -webkit-text-fill-color: var(--primary-color);
-                background: none;
-            }
-
-            .title-slide h1 {
-                -webkit-text-fill-color: white;
             }
 
             /* Ensure lists have proper spacing */

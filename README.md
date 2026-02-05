@@ -17,7 +17,14 @@ A modern, interactive presentation covering essential security knowledge for tec
 7. **Data Privacy** - Personal and professional data protection
 8. **Incident Response** - What to do when compromised
 9. **Security Culture** - Building organizational awareness
-10. **Resources & Tools** - Recommended tools and learning materials
+10. **Network Security** - Network threats, Wi-Fi security, and best practices
+11. **Mobile Security** - Protecting smartphones and tablets
+12. **Cloud Security** - Securing data in cloud services
+13. **Emerging Threats** - AI attacks, deepfakes, IoT, and supply chain risks
+14. **Zero Trust Architecture** - Modern security framework principles
+15. **Secure Software Development** - DevSecOps and secure coding practices
+16. **Compliance & Regulations** - GDPR, HIPAA, PCI DSS, and more
+17. **Resources & Tools** - Recommended tools and learning materials
 
 ---
 
@@ -132,13 +139,56 @@ All dependencies are loaded from CDNs, so no local installation is needed!
 - Organizational responsibility
 - Continuous learning resources
 
-#### 10. Resources & Takeaways (4 slides)
+#### 10. Network Security (5 slides)
+- Understanding network threats (Man-in-the-Middle, Evil Twin, etc.)
+- Public Wi-Fi dangers and statistics
+- Securing your network connections
+- Home network best practices and segmentation
+
+#### 11. Mobile Security (5 slides)
+- Why mobile security matters
+- Mobile-specific threats
+- Best practices for securing devices
+- App permissions and security auditing
+
+#### 12. Cloud Security (5 slides)
+- The cloud landscape and services
+- Cloud-specific security risks
+- Data protection strategies
+- Shared responsibility model
+
+#### 13. Emerging Threats (6 slides)
+- AI-powered cyberattacks
+- Deepfakes and synthetic media
+- IoT security challenges
+- Securing IoT devices
+- Supply chain attacks
+
+#### 14. Zero Trust Architecture (4 slides)
+- What is Zero Trust
+- Core principles (verify explicitly, least privilege, etc.)
+- Implementation strategies
+- Benefits for security and business
+
+#### 15. Secure Software Development (4 slides)
+- Why secure development matters
+- OWASP Top 10 vulnerabilities
+- Secure coding practices
+- DevSecOps and CI/CD security
+
+#### 16. Compliance & Regulations (5 slides)
+- Why compliance matters
+- Major regulations (GDPR, CCPA, HIPAA, PCI DSS, etc.)
+- GDPR key requirements
+- Building a compliance program
+
+#### 17. Resources & Takeaways (4 slides)
 - Recommended tools (passwords, security, privacy, 2FA)
 - Learning resources and websites
 - Security checklist
 - Conclusion and key takeaways
 
-**Total: 50+ slides** organized into logical sections
+**Total: 85+ slides** organized into 17 comprehensive sections
 
 ---
 
@@ -313,19 +363,24 @@ Example: `security-presentation.html?print-pdf`
 - Management and executives
 
 ### Duration
-- **Full presentation**: 45-60 minutes with discussion
-- **Condensed version**: 30 minutes (skip some sub-sections)
-- **Workshop format**: 90 minutes with Q&A and activities
+- **Full presentation**: 90-120 minutes with discussion (all 17 sections)
+- **Core essentials**: 45-60 minutes (original 10 sections)
+- **Advanced topics**: 30-45 minutes (new sections: Network, Mobile, Cloud, Emerging, Zero Trust, DevSecOps, Compliance)
+- **Workshop format**: 2-3 hours with Q&A, activities, and hands-on exercises
 
 ### Learning Objectives
 By the end of this presentation, attendees will be able to:
-1. Identify common security threats
+1. Identify common and emerging security threats (AI, deepfakes, IoT, supply chain)
 2. Recognize phishing and social engineering attempts
-3. Implement strong password practices
+3. Implement strong password practices and password managers
 4. Enable and use two-factor authentication
-5. Protect personal and professional data
-6. Respond appropriately to security incidents
-7. Foster a security-aware culture
+5. Protect personal and professional data in cloud and mobile environments
+6. Secure network connections and home networks
+7. Respond appropriately to security incidents
+8. Understand Zero Trust principles and modern security frameworks
+9. Apply secure development practices (DevSecOps)
+10. Navigate compliance and regulatory requirements
+11. Foster a security-aware culture
 
 ---
 

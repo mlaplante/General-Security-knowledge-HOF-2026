@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Essentials - Full Sail Hall of Fame 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Roboto+Mono:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #ff6b35;
+            --accent-color: #7b2cbf;
+            --dark-bg: #0a0e27;
+            --light-text: #ffffff;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .reveal {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--dark-bg);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .reveal h1 {
+            font-size: 3.5em;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal h2 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        .reveal h3 {
+            color: var(--secondary-color);
+            font-size: 1.8em;
+        }
+
+        .reveal p, .reveal li {
+            font-size: 1.2em;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .reveal strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .reveal code {
+            font-family: 'Roboto Mono', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+            color: var(--primary-color);
+        }
+
+        /* Title Slide */
+        .title-slide {
+            background: var(--gradient-1);
+            padding: 2em;
+            border-radius: 20px;
+        }
+
+        .title-slide h1 {
+            -webkit-text-fill-color: white;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            margin-top: 1em;
+        }
+
+        .event-badge {
+            display: inline-block;
+            background: var(--secondary-color);
+            padding: 0.5em 1.5em;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1em;
+            font-size: 1.2em;
+        }
+
+        /* Section Headers */
+        .section-header {
+            position: relative;
+            padding: 2em;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-3);
+            border-radius: 2px;
+        }
+
+        /* Icon Boxes */
+        .icon-box {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1em;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-box:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .icon-box i {
+            font-size: 3em;
+            color: white;
+        }
+
+        /* Stats/Numbers */
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5em;
+            margin: 1em 0;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 900;
+            color: var(--secondary-color);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5em;
+        }
+
+        /* Warning/Alert Boxes */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.05));
+            border: 2px solid var(--secondary-color);
+            border-radius: 15px;
+            padding: 1.5em;
+            margin: 1em 0;
+        }
+
+        .warning-box i {
+            color: var(--secondary-color);
+            font-size: 2em;
+            margin-right: 0.5em;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.05));
+            border: 2px solid var(--primary-color);
+            border-radius: 15px;
+            padding: 1.5em;
+            margin: 1em 0;
+        }
+
+        .success-box i {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-right: 0.5em;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            align-items: center;
+        }
+
+        /* List Styling */
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .reveal ul li {
+            margin: 1em 0;
+            padding-left: 2em;
+            position: relative;
+        }
+
+        .reveal ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+
+        /* Interactive Button */
+        .interactive-btn {
+            background: var(--gradient-3);
+            border: none;
+            padding: 1em 2em;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1em;
+        }
+
+        .interactive-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Example Box */
+        .example-box {
+            background: rgba(123, 44, 191, 0.2);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5em;
+            margin: 1em 0;
+            border-radius: 8px;
+            text-align: left;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        /* Grid Layout for Icons */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            margin: 2em 0;
+        }
+
+        .icon-item {
+            text-align: center;
+        }
+
+        .icon-item i {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+        }
+
+        /* Progress Indicator */
+        .reveal .progress {
+            background: rgba(0, 0, 0, 0.3);
+            height: 4px;
+        }
+
+        .reveal .progress span {
+            background: var(--gradient-3);
+        }
+
+        /* Fragments Animation */
+        .reveal .fragment {
+            transition: all 0.3s ease;
+        }
+
+        .reveal .fragment.visible {
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.5);
+            z-index: 100;
+        }
+
+        /* Highlight effect */
+        .highlight {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+        }
+
+        /* Quote style */
+        .quote {
+            font-size: 1.5em;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5em;
+            margin: 1.5em 0;
+        }
+
+        /* Checklist */
+        .checklist li::before {
+            content: '✓';
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 0.2em 0.5em;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- SLIDE 1: Title -->
+            <section>
+                <div class="title-slide">
+                    <h1>Security Essentials</h1>
+                    <p class="subtitle">Essential Security Knowledge for Technology Professionals</p>
+                    <div class="event-badge">
+                        <i class="fas fa-award"></i> Full Sail University Hall of Fame 2026
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: Agenda -->
+            <section>
+                <div class="section-header">
+                    <h2>Today's Journey</h2>
+                </div>
+                <div class="icon-grid">
+                    <div class="icon-item fragment">
+                        <i class="fas fa-fish"></i>
+                        <p>Phishing Attacks</p>
+                    </div>
+                    <div class="icon-item fragment">
+                        <i class="fas fa-users"></i>
+                        <p>Social Engineering</p>
+                    </div>
+                    <div class="icon-item fragment">
+                        <i class="fas fa-virus"></i>
+                        <p>Malware Threats</p>
+                    </div>
+                    <div class="icon-item fragment">
+                        <i class="fas fa-key"></i>
+                        <p>Password Security</p>
+                    </div>
+                    <div class="icon-item fragment">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>2FA & MFA</p>
+                    </div>
+                    <div class="icon-item fragment">
+                        <i class="fas fa-user-secret"></i>
+                        <p>Data Privacy</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: Why This Matters -->
+            <section>
+                <h2>Why Security Matters</h2>
+                <div class="two-columns">
+                    <div>
+                        <div class="stat-box fragment">
+                            <div class="stat-number">$4.45M</div>
+                            <div class="stat-label">Average cost of a data breach in 2023</div>
+                        </div>
+                        <div class="stat-box fragment">
+                            <div class="stat-number">3.4B</div>
+                            <div class="stat-label">Phishing emails sent daily</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="stat-box fragment">
+                            <div class="stat-number">277 Days</div>
+                            <div class="stat-label">Average time to identify a breach</div>
+                        </div>
+                        <div class="stat-box fragment">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Breaches caused by human error</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: PHISHING -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                    <h1><i class="fas fa-fish"></i> Phishing Attacks</h1>
+                    <p class="subtitle">The Most Common Cyber Threat</p>
+                </section>
+
+                <section>
+                    <h2>What is Phishing?</h2>
+                    <p>Phishing is a <strong>social engineering attack</strong> where attackers impersonate trusted entities to steal sensitive information.</p>
+                    
+                    <div class="warning-box fragment">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Goal:</strong> Trick you into revealing passwords, credit card numbers, or installing malware
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Types of Phishing</h2>
+                    <ul>
+                        <li class="fragment"><strong>Email Phishing:</strong> Mass emails pretending to be from legitimate companies</li>
+                        <li class="fragment"><strong>Spear Phishing:</strong> Targeted attacks on specific individuals</li>
+                        <li class="fragment"><strong>Whaling:</strong> Attacks targeting executives and high-profile targets</li>
+                        <li class="fragment"><strong>Smishing:</strong> Phishing via SMS/text messages</li>
+                        <li class="fragment"><strong>Vishing:</strong> Voice phishing via phone calls</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Red Flags to Watch For</h2>
+                    <div class="two-columns">
+                        <ul>
+                            <li class="fragment">Urgent or threatening language</li>
+                            <li class="fragment">Poor grammar and spelling</li>
+                            <li class="fragment">Generic greetings ("Dear Customer")</li>
+                            <li class="fragment">Suspicious sender addresses</li>
+                        </ul>
+                        <ul>
+                            <li class="fragment">Unexpected attachments</li>
+                            <li class="fragment">Requests for sensitive info</li>
+                            <li class="fragment">Mismatched URLs</li>
+                            <li class="fragment">Too good to be true offers</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Real Example</h2>
+                    <div class="example-box">
+                        <strong>Subject:</strong> URGENT: Your account will be closed!<br><br>
+                        Dear Valued Customer,<br><br>
+                        We detected suspicious activity on your account. 
+                        Click here immediately to verify your identity or your 
+                        account will be permanently suspended within 24 hours.<br><br>
+                        <strong style="color: var(--secondary-color);">
+                        🚩 Red Flags: Urgency, generic greeting, suspicious link
+                        </strong>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>How to Protect Yourself</h2>
+                    <ul class="checklist">
+                        <li class="fragment">Hover over links before clicking</li>
+                        <li class="fragment">Verify sender email addresses carefully</li>
+                        <li class="fragment">Never provide credentials via email</li>
+                        <li class="fragment">Use email filtering and anti-phishing tools</li>
+                        <li class="fragment">When in doubt, contact the company directly</li>
+                        <li class="fragment">Report suspicious emails to IT/Security</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- SECTION: SOCIAL ENGINEERING -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+                    <h1><i class="fas fa-users"></i> Social Engineering</h1>
+                    <p class="subtitle">Hacking the Human Element</p>
+                </section>
+
+                <section>
+                    <h2>What is Social Engineering?</h2>
+                    <p>Social engineering is the art of <strong>manipulating people</strong> into divulging confidential information or performing actions that compromise security.</p>
+                    
+                    <div class="quote fragment">
+                        "It's easier to hack a person than to hack a system."
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Tactics</h2>
+                    <div class="icon-grid">
+                        <div class="icon-item fragment">
+                            <i class="fas fa-user-tie"></i>
+                            <p><strong>Pretexting</strong><br>Creating false scenarios</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-gift"></i>
+                            <p><strong>Baiting</strong><br>Offering something enticing</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-bolt"></i>
+                            <p><strong>Urgency</strong><br>Creating time pressure</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-crown"></i>
+                            <p><strong>Authority</strong><br>Impersonating leaders</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-door-open"></i>
+                            <p><strong>Tailgating</strong><br>Physical access tricks</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-trash"></i>
+                            <p><strong>Dumpster Diving</strong><br>Searching discarded info</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Real-World Scenario</h2>
+                    <div class="warning-box">
+                        <strong>The CEO Email Scam</strong><br><br>
+                        An employee receives an urgent email appearing to be from the CEO:
+                        <div class="example-box" style="margin-top: 1em;">
+                            "I'm in a meeting with investors and need you to wire 
+                            $50,000 to this account immediately. Don't discuss this 
+                            with anyone - it's confidential. Time sensitive!"
+                        </div>
+                    </div>
+                    <p class="fragment" style="margin-top: 1em;">This uses <span class="highlight">authority + urgency + secrecy</span> to bypass normal procedures.</p>
+                </section>
+
+                <section>
+                    <h2>Defense Strategies</h2>
+                    <ul class="checklist">
+                        <li class="fragment">Verify identities through multiple channels</li>
+                        <li class="fragment">Follow established security procedures</li>
+                        <li class="fragment">Be skeptical of unusual requests</li>
+                        <li class="fragment">Never let urgency override security</li>
+                        <li class="fragment">Educate yourself on manipulation tactics</li>
+                        <li class="fragment">Trust your instincts - if it feels wrong, verify</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- SECTION: MALWARE -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+                    <h1><i class="fas fa-virus"></i> Malware & Ransomware</h1>
+                    <p class="subtitle">Understanding Malicious Software</p>
+                </section>
+
+                <section>
+                    <h2>Types of Malware</h2>
+                    <div class="two-columns">
+                        <div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-bug" style="color: var(--secondary-color);"></i>
+                                <strong>Virus</strong>
+                                <p style="font-size: 0.8em;">Replicates and spreads to other files</p>
+                            </div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-worm" style="color: var(--secondary-color);"></i>
+                                <strong>Worm</strong>
+                                <p style="font-size: 0.8em;">Self-replicates across networks</p>
+                            </div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-horse-head" style="color: var(--secondary-color);"></i>
+                                <strong>Trojan</strong>
+                                <p style="font-size: 0.8em;">Disguised as legitimate software</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-lock" style="color: var(--secondary-color);"></i>
+                                <strong>Ransomware</strong>
+                                <p style="font-size: 0.8em;">Encrypts files, demands payment</p>
+                            </div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-eye" style="color: var(--secondary-color);"></i>
+                                <strong>Spyware</strong>
+                                <p style="font-size: 0.8em;">Monitors and steals information</p>
+                            </div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-ad" style="color: var(--secondary-color);"></i>
+                                <strong>Adware</strong>
+                                <p style="font-size: 0.8em;">Unwanted advertisements</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Ransomware: The Modern Threat</h2>
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Ransomware encrypts your files and demands payment for the decryption key
+                    </div>
+                    
+                    <div class="two-columns" style="margin-top: 2em;">
+                        <div class="stat-box fragment">
+                            <div class="stat-number">$1.1B</div>
+                            <div class="stat-label">Ransomware damages in 2023</div>
+                        </div>
+                        <div class="stat-box fragment">
+                            <div class="stat-number">Every 11s</div>
+                            <div class="stat-label">A business is attacked</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>How Malware Spreads</h2>
+                    <ul>
+                        <li class="fragment"><strong>Email Attachments:</strong> Infected files disguised as documents</li>
+                        <li class="fragment"><strong>Malicious Links:</strong> URLs leading to infected downloads</li>
+                        <li class="fragment"><strong>Software Vulnerabilities:</strong> Exploiting unpatched systems</li>
+                        <li class="fragment"><strong>USB Drives:</strong> Physical media carrying infections</li>
+                        <li class="fragment"><strong>Compromised Websites:</strong> Drive-by downloads</li>
+                        <li class="fragment"><strong>Fake Software:</strong> Pirated or bundled programs</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Protection Measures</h2>
+                    <ul class="checklist">
+                        <li class="fragment">Keep all software and OS updated</li>
+                        <li class="fragment">Use reputable antivirus/anti-malware</li>
+                        <li class="fragment">Enable automatic updates</li>
+                        <li class="fragment">Regular backups (3-2-1 rule)</li>
+                        <li class="fragment">Avoid downloading from untrusted sources</li>
+                        <li class="fragment">Scan all external drives before use</li>
+                        <li class="fragment">Use application whitelisting</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The 3-2-1 Backup Rule</h2>
+                    <div class="success-box fragment">
+                        <i class="fas fa-database"></i>
+                        <strong>3</strong> copies of your data
+                    </div>
+                    <div class="success-box fragment">
+                        <i class="fas fa-hdd"></i>
+                        <strong>2</strong> different media types
+                    </div>
+                    <div class="success-box fragment">
+                        <i class="fas fa-cloud"></i>
+                        <strong>1</strong> copy off-site
+                    </div>
+                </section>
+            </section>
+
+            <!-- SECTION: PASSWORD SECURITY -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                    <h1><i class="fas fa-key"></i> Password Security</h1>
+                    <p class="subtitle">Your First Line of Defense</p>
+                </section>
+
+                <section>
+                    <h2>The Password Problem</h2>
+                    <div class="two-columns">
+                        <div class="stat-box fragment">
+                            <div class="stat-number">81%</div>
+                            <div class="stat-label">Breaches involve weak/stolen passwords</div>
+                        </div>
+                        <div class="stat-box fragment">
+                            <div class="stat-number">23M</div>
+                            <div class="stat-label">Accounts use "123456"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="warning-box fragment" style="margin-top: 2em;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Password reuse</strong> is one of the biggest security risks
+                    </div>
+                </section>
+
+                <section>
+                    <h2>What Makes a Strong Password?</h2>
+                    <ul class="checklist">
+                        <li class="fragment">At least 12-16 characters long</li>
+                        <li class="fragment">Mix of uppercase, lowercase, numbers, symbols</li>
+                        <li class="fragment">No dictionary words or personal information</li>
+                        <li class="fragment">Unique for each account</li>
+                        <li class="fragment">Not a pattern (qwerty, 123456, etc.)</li>
+                    </ul>
+                    
+                    <div class="example-box fragment" style="margin-top: 1em;">
+                        ❌ Bad: Password123!<br>
+                        ✅ Good: Tr0p!c@l#F1sh&M00n$2024
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Password Strategies</h2>
+                    
+                    <div class="success-box fragment">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>Passphrase Method</strong><br>
+                        Use a memorable sentence with substitutions<br>
+                        <code>Correct-Horse-Battery-Staple!</code>
+                    </div>
+                    
+                    <div class="success-box fragment">
+                        <i class="fas fa-vault"></i>
+                        <strong>Password Manager</strong><br>
+                        Let software generate and store complex passwords<br>
+                        (1Password, LastPass, Bitwarden, Dashlane)
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Password Manager Benefits</h2>
+                    <div class="icon-grid">
+                        <div class="icon-item fragment">
+                            <i class="fas fa-random"></i>
+                            <p>Generate strong passwords</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-lock"></i>
+                            <p>Encrypted storage</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-sync"></i>
+                            <p>Sync across devices</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-clipboard"></i>
+                            <p>Auto-fill credentials</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Breach monitoring</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-users"></i>
+                            <p>Secure sharing</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Password Don'ts</h2>
+                    <ul>
+                        <li class="fragment">❌ Don't write passwords on sticky notes</li>
+                        <li class="fragment">❌ Don't share passwords via email/text</li>
+                        <li class="fragment">❌ Don't use the same password everywhere</li>
+                        <li class="fragment">❌ Don't use personal info (birthdays, names)</li>
+                        <li class="fragment">❌ Don't save passwords in browsers (unencrypted)</li>
+                        <li class="fragment">❌ Don't ignore password change requests after breaches</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- SECTION: TWO-FACTOR AUTHENTICATION -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+                    <h1><i class="fas fa-shield-alt"></i> Two-Factor Authentication</h1>
+                    <p class="subtitle">Adding an Extra Layer of Security</p>
+                </section>
+
+                <section>
+                    <h2>What is 2FA/MFA?</h2>
+                    <p>Authentication using <strong>two or more factors</strong> to verify identity:</p>
+                    
+                    <div class="success-box fragment">
+                        <strong>Something you know</strong> - Password or PIN
+                    </div>
+                    <div class="success-box fragment">
+                        <strong>Something you have</strong> - Phone, token, smart card
+                    </div>
+                    <div class="success-box fragment">
+                        <strong>Something you are</strong> - Fingerprint, face, voice
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Why 2FA Matters</h2>
+                    <div class="stat-box fragment">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Reduction in account compromise with MFA enabled</div>
+                    </div>
+                    
+                    <p class="fragment" style="margin-top: 2em;">Even if your password is compromised, attackers still can't access your account!</p>
+                </section>
+
+                <section>
+                    <h2>Types of 2FA</h2>
+                    <div class="two-columns">
+                        <div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-mobile-alt" style="color: var(--primary-color);"></i>
+                                <strong>SMS Codes</strong>
+                                <p style="font-size: 0.8em;">Text message verification</p>
+                            </div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-qrcode" style="color: var(--primary-color);"></i>
+                                <strong>Authenticator Apps</strong>
+                                <p style="font-size: 0.8em;">Google/Microsoft Authenticator</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-key" style="color: var(--primary-color);"></i>
+                                <strong>Hardware Tokens</strong>
+                                <p style="font-size: 0.8em;">YubiKey, physical devices</p>
+                            </div>
+                            <div class="stat-box fragment">
+                                <i class="fas fa-fingerprint" style="color: var(--primary-color);"></i>
+                                <strong>Biometrics</strong>
+                                <p style="font-size: 0.8em;">Face ID, Touch ID</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices</h2>
+                    <ul class="checklist">
+                        <li class="fragment">Enable 2FA on all critical accounts</li>
+                        <li class="fragment">Prefer authenticator apps over SMS when possible</li>
+                        <li class="fragment">Keep backup codes in a secure location</li>
+                        <li class="fragment">Use hardware tokens for highest security</li>
+                        <li class="fragment">Never share 2FA codes with anyone</li>
+                        <li class="fragment">Review and update authentication methods regularly</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Priority Accounts for 2FA</h2>
+                    <div class="icon-grid">
+                        <div class="icon-item fragment">
+                            <i class="fas fa-envelope"></i>
+                            <p>Email</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-university"></i>
+                            <p>Banking</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-briefcase"></i>
+                            <p>Work Accounts</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-share-alt"></i>
+                            <p>Social Media</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-cloud"></i>
+                            <p>Cloud Storage</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>E-commerce</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- SECTION: DATA PRIVACY -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+                    <h1><i class="fas fa-user-secret"></i> Data Privacy</h1>
+                    <p class="subtitle">Protecting Your Digital Footprint</p>
+                </section>
+
+                <section>
+                    <h2>What is Data Privacy?</h2>
+                    <p>Data privacy is about controlling <strong>who has access</strong> to your personal information and <strong>how it's used</strong>.</p>
+                    
+                    <div class="warning-box fragment">
+                        <i class="fas fa-info-circle"></i>
+                        Personal data includes: names, addresses, emails, phone numbers, 
+                        IP addresses, location data, browsing history, biometric data, and more
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Privacy Risks</h2>
+                    <ul>
+                        <li class="fragment"><strong>Data Breaches:</strong> Unauthorized access to databases</li>
+                        <li class="fragment"><strong>Identity Theft:</strong> Stolen personal info used fraudulently</li>
+                        <li class="fragment"><strong>Tracking:</strong> Companies monitoring your online behavior</li>
+                        <li class="fragment"><strong>Data Mining:</strong> Aggregating data to profile you</li>
+                        <li class="fragment"><strong>Social Media Exposure:</strong> Oversharing personal details</li>
+                        <li class="fragment"><strong>Third-Party Sharing:</strong> Your data sold to others</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Privacy Protection Steps</h2>
+                    <ul class="checklist">
+                        <li class="fragment">Review and adjust privacy settings on all platforms</li>
+                        <li class="fragment">Limit information shared on social media</li>
+                        <li class="fragment">Use VPN on public Wi-Fi networks</li>
+                        <li class="fragment">Clear cookies and browsing data regularly</li>
+                        <li class="fragment">Use privacy-focused browsers (Brave, Firefox)</li>
+                        <li class="fragment">Read privacy policies before agreeing</li>
+                        <li class="fragment">Opt out of data sharing when possible</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Professional Data Privacy</h2>
+                    <div class="warning-box">
+                        <i class="fas fa-briefcase"></i>
+                        <strong>Work Data Requires Extra Care</strong>
+                    </div>
+                    
+                    <ul style="margin-top: 1em;">
+                        <li class="fragment">Never share proprietary company information</li>
+                        <li class="fragment">Protect customer/client data as if it were your own</li>
+                        <li class="fragment">Follow company data handling policies</li>
+                        <li class="fragment">Encrypt sensitive data in transit and at rest</li>
+                        <li class="fragment">Use approved tools and platforms only</li>
+                        <li class="fragment">Report data incidents immediately</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Privacy Tools</h2>
+                    <div class="icon-grid">
+                        <div class="icon-item fragment">
+                            <i class="fas fa-user-shield"></i>
+                            <p>VPN Services</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-search"></i>
+                            <p>Private Search Engines</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-lock"></i>
+                            <p>Encrypted Messaging</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-mail-bulk"></i>
+                            <p>Email Masking</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-ad"></i>
+                            <p>Ad Blockers</p>
+                        </div>
+                        <div class="icon-item fragment">
+                            <i class="fas fa-browser"></i>
+                            <p>Privacy Browsers</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- SECTION: INCIDENT RESPONSE -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                    <h1><i class="fas fa-ambulance"></i> Incident Response</h1>
+                    <p class="subtitle">What to Do When Compromised</p>
+                </section>
+
+                <section>
+                    <h2>If You Click a Phishing Link</h2>
+                    <ol>
+                        <li class="fragment"><strong>Don't Panic</strong> - Act quickly but calmly</li>
+                        <li class="fragment"><strong>Disconnect</strong> - Turn off Wi-Fi or unplug ethernet</li>
+                        <li class="fragment"><strong>Don't Enter Info</strong> - Close the page immediately</li>
+                        <li class="fragment"><strong>Scan System</strong> - Run antivirus/anti-malware</li>
+                        <li class="fragment"><strong>Change Passwords</strong> - Start with email, then others</li>
+                        <li class="fragment"><strong>Report It</strong> - Notify IT/Security team</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>If You're Hacked</h2>
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Signs of Compromise:</strong> Unexpected password resets, unfamiliar 
+                        activity, locked accounts, strange emails sent from your account
+                    </div>
+                    
+                    <ul class="checklist" style="margin-top: 1em;">
+                        <li class="fragment">Change all passwords immediately</li>
+                        <li class="fragment">Enable 2FA if not already active</li>
+                        <li class="fragment">Review recent account activity</li>
+                        <li class="fragment">Check for unauthorized access/devices</li>
+                        <li class="fragment">Notify contacts if account was compromised</li>
+                        <li class="fragment">Monitor credit reports and financial accounts</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Ransomware Attack Response</h2>
+                    <div class="warning-box">
+                        <i class="fas fa-virus"></i>
+                        <strong>NEVER PAY THE RANSOM</strong> - No guarantee of file recovery
+                    </div>
+                    
+                    <ol style="margin-top: 1em;">
+                        <li class="fragment">Isolate infected systems immediately</li>
+                        <li class="fragment">Report to IT/Security and law enforcement</li>
+                        <li class="fragment">Do not delete or modify anything</li>
+                        <li class="fragment">Restore from clean backups</li>
+                        <li class="fragment">Use decryption tools if available</li>
+                        <li class="fragment">Document everything for insurance/legal</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Building an Incident Response Plan</h2>
+                    <div class="success-box fragment">
+                        <strong>1. Preparation</strong> - Have tools and contacts ready
+                    </div>
+                    <div class="success-box fragment">
+                        <strong>2. Detection</strong> - Identify and confirm the incident
+                    </div>
+                    <div class="success-box fragment">
+                        <strong>3. Containment</strong> - Limit the damage
+                    </div>
+                    <div class="success-box fragment">
+                        <strong>4. Eradication</strong> - Remove the threat
+                    </div>
+                    <div class="success-box fragment">
+                        <strong>5. Recovery</strong> - Restore normal operations
+                    </div>
+                    <div class="success-box fragment">
+                        <strong>6. Lessons Learned</strong> - Improve for next time
+                    </div>
+                </section>
+            </section>
+
+            <!-- SECTION: SECURITY CULTURE -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+                    <h1><i class="fas fa-users-cog"></i> Building a Security Culture</h1>
+                    <p class="subtitle">Security is Everyone's Responsibility</p>
+                </section>
+
+                <section>
+                    <h2>Security Mindset</h2>
+                    <div class="quote fragment">
+                        "Security is not a product, but a process."<br>
+                        <small>- Bruce Schneier</small>
+                    </div>
+                    
+                    <ul style="margin-top: 2em;">
+                        <li class="fragment">Think before you click</li>
+                        <li class="fragment">Question the unusual</li>
+                        <li class="fragment">Verify before trusting</li>
+                        <li class="fragment">Stay informed about threats</li>
+                        <li class="fragment">Report suspicious activity</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Daily Security Habits</h2>
+                    <ul class="checklist">
+                        <li class="fragment">Lock your screen when away</li>
+                        <li class="fragment">Keep software updated</li>
+                        <li class="fragment">Verify email sender before opening attachments</li>
+                        <li class="fragment">Use secure connections (HTTPS)</li>
+                        <li class="fragment">Be cautious on public Wi-Fi</li>
+                        <li class="fragment">Regularly backup important data</li>
+                        <li class="fragment">Review account activity periodically</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Organizational Security</h2>
+                    <div class="two-columns">
+                        <div>
+                            <h3>Leadership</h3>
+                            <ul>
+                                <li class="fragment">Set security policies</li>
+                                <li class="fragment">Provide resources</li>
+                                <li class="fragment">Lead by example</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Employees</h3>
+                            <ul>
+                                <li class="fragment">Follow protocols</li>
+                                <li class="fragment">Stay trained</li>
+                                <li class="fragment">Speak up</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="success-box fragment" style="margin-top: 2em;">
+                        <i class="fas fa-shield-alt"></i>
+                        <strong>Security is a shared responsibility across all levels</strong>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Continuous Learning</h2>
+                    <p>Cyber threats evolve constantly. Stay current through:</p>
+                    
+                    <ul>
+                        <li class="fragment">Regular security training and workshops</li>
+                        <li class="fragment">Security newsletters and blogs</li>
+                        <li class="fragment">Simulated phishing exercises</li>
+                        <li class="fragment">Industry conferences and webinars</li>
+                        <li class="fragment">Certifications (Security+, CISSP, CEH)</li>
+                        <li class="fragment">Threat intelligence feeds</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- SECTION: RESOURCES -->
+            <section>
+                <section data-background-gradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+                    <h1><i class="fas fa-book"></i> Resources & Tools</h1>
+                    <p class="subtitle">Continue Your Security Journey</p>
+                </section>
+
+                <section>
+                    <h2>Recommended Tools</h2>
+                    <div class="two-columns">
+                        <div>
+                            <h3>Password Management</h3>
+                            <ul>
+                                <li>1Password</li>
+                                <li>Bitwarden</li>
+                                <li>LastPass</li>
+                                <li>Dashlane</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Security Software</h3>
+                            <ul>
+                                <li>Malwarebytes</li>
+                                <li>Windows Defender</li>
+                                <li>Sophos</li>
+                                <li>Bitdefender</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="two-columns" style="margin-top: 2em;">
+                        <div>
+                            <h3>Privacy Tools</h3>
+                            <ul>
+                                <li>NordVPN / ExpressVPN</li>
+                                <li>DuckDuckGo</li>
+                                <li>Signal</li>
+                                <li>Brave Browser</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>2FA Apps</h3>
+                            <ul>
+                                <li>Google Authenticator</li>
+                                <li>Microsoft Authenticator</li>
+                                <li>Authy</li>
+                                <li>YubiKey</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Learning Resources</h2>
+                    <ul>
+                        <li class="fragment"><strong>NIST Cybersecurity Framework</strong> - nist.gov/cyberframework</li>
+                        <li class="fragment"><strong>SANS Security Training</strong> - sans.org</li>
+                        <li class="fragment"><strong>OWASP</strong> - owasp.org</li>
+                        <li class="fragment"><strong>Krebs on Security</strong> - krebsonsecurity.com</li>
+                        <li class="fragment"><strong>Have I Been Pwned</strong> - haveibeenpwned.com</li>
+                        <li class="fragment"><strong>StaySafeOnline</strong> - staysafeonline.org</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Security Checklist</h2>
+                    <ul class="checklist">
+                        <li>Enable 2FA on all critical accounts</li>
+                        <li>Use a password manager</li>
+                        <li>Keep all software updated</li>
+                        <li>Regular backups (3-2-1 rule)</li>
+                        <li>Install and update antivirus</li>
+                        <li>Use VPN on public networks</li>
+                        <li>Review privacy settings</li>
+                        <li>Stay informed about threats</li>
+                        <li>Think before you click</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- CONCLUSION -->
+            <section>
+                <div class="title-slide">
+                    <h1>Stay Secure!</h1>
+                    <p class="subtitle">Remember: Security is a Journey, Not a Destination</p>
+                    
+                    <div class="success-box" style="margin-top: 2em;">
+                        <i class="fas fa-shield-alt"></i>
+                        <strong>Key Takeaways</strong><br>
+                        Think critically • Verify constantly • Update regularly<br>
+                        Use strong passwords • Enable 2FA • Stay informed
+                    </div>
+                    
+                    <div class="event-badge" style="margin-top: 2em;">
+                        <i class="fas fa-award"></i> Thank You - Full Sail Hall of Fame 2026
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        Full Sail University Hall of Fame 2026 | Security Essentials
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            progress: true,
+            controls: true,
+            center: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            slideNumber: 'c/t',
+            
+            // Enhanced keyboard shortcuts
+            keyboard: {
+                13: 'next', // Enter
+                32: 'next', // Space
+            },
+            
+            // Mouse wheel navigation
+            mouseWheel: true,
+            
+            // Auto-animate matching elements
+            autoAnimate: true,
+            autoAnimateDuration: 0.5,
+        });
+
+        // Add custom interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to interactive buttons if needed
+            const buttons = document.querySelectorAll('.interactive-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    Reveal.next();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

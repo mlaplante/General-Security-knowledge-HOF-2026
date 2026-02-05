@@ -388,8 +388,8 @@
                 /* Fix gradient text that disappears on mobile browsers */
                 color: var(--primary-color);
                 background: none;
-                -webkit-background-clip: unset;
-                background-clip: unset;
+                -webkit-background-clip: initial;
+                background-clip: initial;
                 -webkit-text-fill-color: inherit;
             }
 
@@ -591,8 +591,8 @@
             }
         }
 
-        /* Landscape mobile orientation */
-        @media screen and (max-width: 896px) and (orientation: landscape) {
+        /* Landscape mobile orientation - for mobile devices in landscape mode */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
             .reveal h1 {
                 font-size: 1.6em;
             }

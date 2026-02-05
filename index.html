@@ -386,8 +386,11 @@
                 line-height: 1.2;
                 margin-bottom: 0.5em;
                 /* Fix gradient text that disappears on mobile browsers */
-                -webkit-text-fill-color: var(--primary-color);
+                color: var(--primary-color);
                 background: none;
+                -webkit-background-clip: unset;
+                background-clip: unset;
+                -webkit-text-fill-color: inherit;
             }
 
             .reveal h2 {
@@ -401,7 +404,7 @@
 
             /* Preserve white text for title slide */
             .title-slide h1 {
-                -webkit-text-fill-color: white;
+                color: white;
             }
 
             /* Adjust text sizes for mobile readability */

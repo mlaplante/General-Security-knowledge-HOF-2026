@@ -377,6 +377,239 @@
             font-weight: bold;
             margin-right: 0.5em;
         }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            /* Adjust heading sizes for mobile and fix gradient visibility */
+            .reveal h1 {
+                font-size: 1.8em;
+                line-height: 1.2;
+                margin-bottom: 0.5em;
+                /* Fix gradient text that disappears on mobile browsers */
+                color: var(--primary-color);
+                background: none;
+            }
+
+            .reveal h2 {
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+            }
+
+            .reveal h3 {
+                font-size: 1.3em;
+            }
+
+            /* Preserve white text for title slide */
+            .title-slide h1 {
+                color: white;
+            }
+
+            /* Adjust text sizes for mobile readability */
+            .reveal p, .reveal li {
+                font-size: 0.85em;
+                line-height: 1.6;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .event-badge {
+                font-size: 1em;
+                padding: 0.4em 1em;
+            }
+
+            /* Icon grid - switch to 2 columns on mobile */
+            .icon-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8em;
+            }
+
+            /* Icon items - smaller on mobile */
+            .icon-item i {
+                font-size: 1.8em;
+            }
+
+            .icon-item p {
+                font-size: 0.75em;
+            }
+
+            /* Two columns become single column on mobile */
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 0.8em;
+            }
+
+            /* Stat boxes - better fit on mobile */
+            .stat-box {
+                padding: 0.8em;
+                margin: 0.4em 0;
+            }
+
+            .stat-number {
+                font-size: 1.8em;
+            }
+
+            .stat-label {
+                font-size: 0.75em;
+            }
+
+            /* Warning and success boxes - full width on mobile */
+            .warning-box, .success-box {
+                padding: 0.8em;
+                margin: 0.5em 0;
+                max-width: 100%;
+            }
+
+            .warning-box i, .success-box i {
+                font-size: 1.2em;
+            }
+
+            /* Icon boxes - smaller on mobile */
+            .icon-box {
+                width: 80px;
+                height: 80px;
+                margin: 0.5em;
+            }
+
+            .icon-box i {
+                font-size: 2em;
+            }
+
+            /* Example boxes - better fit */
+            .example-box {
+                font-size: 0.7em;
+                padding: 0.8em;
+            }
+
+            /* Quote styling for mobile */
+            .quote {
+                font-size: 1.2em;
+                padding-left: 1em;
+                margin: 1em 0;
+            }
+
+            /* Footer - adjust position */
+            .footer {
+                bottom: 10px;
+                left: 10px;
+                font-size: 0.6em;
+            }
+
+            /* Buttons - better touch targets */
+            .interactive-btn {
+                padding: 0.8em 1.5em;
+                font-size: 1em;
+            }
+
+            /* Section headers */
+            .section-header::before {
+                width: 60px;
+            }
+
+            /* Ensure lists have proper spacing */
+            .reveal ul li {
+                padding-left: 2em;
+            }
+
+            .reveal ul li::before {
+                font-size: 1.2em;
+            }
+
+            /* Checklist improvements */
+            .checklist li::before {
+                padding: 0.15em 0.4em;
+                font-size: 0.8em;
+            }
+        }
+
+        /* Extra small mobile devices */
+        @media screen and (max-width: 480px) {
+            /* Further reduce heading sizes */
+            .reveal h1 {
+                font-size: 1.5em;
+            }
+
+            .reveal h2 {
+                font-size: 1.3em;
+            }
+
+            .reveal h3 {
+                font-size: 1.1em;
+            }
+
+            /* Text adjustments */
+            .reveal p, .reveal li {
+                font-size: 0.8em;
+            }
+
+            /* Icon grid - single column for very small screens */
+            .icon-grid {
+                grid-template-columns: 1fr;
+                gap: 0.6em;
+            }
+
+            /* Stat numbers more compact */
+            .stat-number {
+                font-size: 1.5em;
+            }
+
+            .stat-label {
+                font-size: 0.7em;
+            }
+
+            /* Icon boxes even smaller */
+            .icon-box {
+                width: 60px;
+                height: 60px;
+                margin: 0.3em;
+            }
+
+            .icon-box i {
+                font-size: 1.5em;
+            }
+
+            /* Title slide adjustments */
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .event-badge {
+                font-size: 0.9em;
+                padding: 0.3em 0.8em;
+            }
+
+            /* Footer even smaller */
+            .footer {
+                font-size: 0.5em;
+                bottom: 5px;
+                left: 5px;
+            }
+        }
+
+        /* Landscape mobile orientation - for mobile devices in landscape mode */
+        @media screen and (max-width: 900px) and (max-height: 500px) {
+            .reveal h1 {
+                font-size: 1.6em;
+            }
+
+            .reveal h2 {
+                font-size: 1.4em;
+            }
+
+            .reveal p, .reveal li {
+                font-size: 0.75em;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5em;
+            }
+
+            .stat-box {
+                padding: 0.6em;
+            }
+        }
     </style>
 </head>
 <body>
